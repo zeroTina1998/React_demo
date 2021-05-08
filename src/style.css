@@ -1,0 +1,15 @@
+ul {
+  border: 1px solid black;
+}
+ul > li {
+  border-bottom: 2px solid bisque;
+}
+.pink {
+  background-color: pink;
+}
+.red {
+  background-color: red;
+}
+.green {
+  background-color: green;
+}
