@@ -1,15 +1,17 @@
-ul {
-  border: 1px solid black;
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  background: grey;
+  padding: 10px;
 }
-ul > li {
-  border-bottom: 2px solid bisque;
+
+.Son {
+  background: yellow;
+  padding: 10px;
 }
-.pink {
-  background-color: pink;
-}
-.red {
-  background-color: red;
-}
-.green {
-  background-color: green;
+
+.Grandson {
+  background: green;
+  padding: 10px;
+  color: white;
 }

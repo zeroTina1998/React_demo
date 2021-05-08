@@ -1,43 +1,46 @@
 import React from "react";
+
 import "./style.css";
 
 function App() {
   return (
-    <div>
-      <header>
-        我是头部
-        <Nav container="我是导航列表容器" />
-      </header>
-      <main>
-        我是身体
-        <MainBody themeColor="pink" />
-      </main>
-      <footer>我是脚</footer>
+    <div className="App">
+      爸爸
+      <Son />
     </div>
   );
 }
 
-const Nav = (props) => {
-  return (
-    <ul>
-      {props.container}
-      <li>我是导航一</li>
-      <li>我是导航二</li>
-      <li>我是导航三</li>
-    </ul>
-  );
-};
-
-class MainBody extends React.Component {
+class Son extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      n: 0,
+    };
+  }
+  add() {
+    // this.state.n += 1 为什么不行
+    this.setState({ n: this.state.n + 1 });
+  }
   render() {
     return (
-      <div className="main_body">
-        <div className={this.props.themeColor}>left</div>
-        <div className="red">main</div>
-        <div className="green">right</div>
+      <div className="Son">
+        儿子 n: {this.state.n}
+        <button onClick={() => this.add()}>+1</button>
+        <Grandson />
       </div>
     );
   }
 }
+
+const Grandson = () => {
+  const [n, setN] = React.useState(0);
+  return (
+    <div className="Grandson">
+      孙子 n:{n}
+      <button onClick={() => setN(n + 1)}>+1</button>
+    </div>
+  );
+};
 
 export default App;
